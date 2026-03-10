@@ -1,0 +1,13 @@
+# railway.toml — Railway deployment config
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "node --experimental-sqlite server.js"
+healthcheckPath = "/manifest.json"
+healthcheckTimeout = 30
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
+
+[[services]]
+name = "intro-skipper"

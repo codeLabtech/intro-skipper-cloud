@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: intro-skipper
+    runtime: node
+    plan: free
+    buildCommand: echo "no build needed"
+    startCommand: node --experimental-sqlite server.js
+    envVars:
+      - key: NODE_VERSION
+        value: 22.0.0
+      - key: PORT
+        value: 10000
+      - key: BASE_URL
+        fromService:
+          type: web
+          name: intro-skipper
+          property: host
+    disk:
+      name: data
+      mountPath: /app/data
+      sizeGB: 1

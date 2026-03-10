@@ -1,0 +1,12 @@
+{
+  "name": "intro-skipper-cloud",
+  "version": "2.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --experimental-sqlite server.js",
+    "dev": "node --experimental-sqlite --watch server.js"
+  },
+  "engines": { "node": ">=22.0.0" },
+  "license": "MIT"
+}
